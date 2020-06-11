@@ -38,4 +38,13 @@ struct Mission: Codable, Identifiable {
             return "N/A"
         }
     }
+    
+    var showCrewNames: String {
+        var crewNames = [String]()
+        
+        for person in crew {
+            crewNames.append(person.name.capitalized)
+        }
+        return crewNames.joined(separator: ", ")
+    }
 }
